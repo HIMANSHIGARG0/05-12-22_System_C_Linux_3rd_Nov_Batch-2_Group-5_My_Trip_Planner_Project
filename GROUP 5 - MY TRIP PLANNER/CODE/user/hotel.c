@@ -5,7 +5,7 @@
 #include<time.h>
 #include<string.h>
 
-void add();
+void add();       
 void list();
 void edit();
 void delete1();
@@ -47,11 +47,11 @@ int main(){
 		printf("-");
 	printf(" \n Press any key to continue:");
 
-	getchar();
-    system("clear");
+	getchar();           //take the input from standard library
+    system("clear");          //clear the o/p screen
     login();
     system("clear");
-	while (1)
+	while (1)           //infinite loop which will run till a break statement
 	{
 		system("clear");
 
@@ -107,14 +107,14 @@ int main(){
 	}
 }
 
-void add()
+void add()                            //add hotels 
 {
-	FILE *f;
+	FILE *f;                      //create a file
 	char test;
-	f=fopen("cus.txt","a+");
+	f=fopen("cus.txt","a+");       //open a file in both read and write mode
 	if(f==0)
-	{   f=fopen("cus.txt","w+");
-		system("cls");
+	{   f=fopen("cus.txt","w+");      
+		system("clear");
 		printf("\n Process completed press any key to continue!! ");
 		getchar();
 	}
@@ -187,14 +187,14 @@ void delete1()
 {
 	FILE *f,*t;
 	int i=1;
-	char roomnumber[20];
+	int roomnumber[20];
 	if((t=fopen("temp.txt","w"))==NULL)
 	exit(0);
 	if((f=fopen("cus.txt","r"))==NULL)
 	exit(0);
-	system("cls");
+	system("clear");
 	printf("Enter the Room Number of the hotel to be deleted from the database: \n");
-	fflush(stdin);
+	fflush(stdin);                                       //flush out the content of output screen
 	scanf("%s",roomnumber);
 	while(fread(&s,sizeof(s),1,f)==1)
 	{
@@ -228,7 +228,7 @@ void search()
 {
 system("clear");
 	FILE *f;
-	char roomnumber[20];
+	int roomnumber[20];
 	int flag=1;
 	f=fopen("cus.txt","r+");
 	if(f==0)
@@ -264,11 +264,11 @@ void edit()
 {
 	FILE *f;
 	int k=1;
-	char roomnumber[20];
+	int roomnumber[20];
 	long int size=sizeof(s);
 	if((f=fopen("cus.txt","r+"))==NULL)
 		exit(0);
-	system("cls");
+	system("clear");
 	printf("Enter Room number of the customer to edit:\n\n");
 	scanf("%[^\n]",roomnumber);
 	fflush(stdin);
