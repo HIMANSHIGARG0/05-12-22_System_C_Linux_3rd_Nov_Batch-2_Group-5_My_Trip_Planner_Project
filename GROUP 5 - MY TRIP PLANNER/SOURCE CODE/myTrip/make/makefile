@@ -8,8 +8,6 @@ CFLAGS = -c -g -Wall
 OFLAGS = -lm -o
 IFLAGS = -I $(INC)
 
-VFLAGS = v --tool=memcheck --leak-check=yes --show-reachable=yes
-
 EXECS = $(BIN)/myTrip
 
 
@@ -37,8 +35,5 @@ clean:
 	rm -f $(OBJ)/*.o
 	rm -f $(BIN)/myTrip
 	@echo "Cleaning Done!"
-
-valgrind:$(EXECS)
-	        valgrind $(VFLAGS) $(BIN)/myTrip
 
 
