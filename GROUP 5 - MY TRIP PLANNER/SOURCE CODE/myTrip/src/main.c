@@ -5,9 +5,6 @@
 #include<register.h>
 #include<commonMacros.h>
 
-#define EXIT_SUCC 1
-#define EXIT_FAIL 0
-
 void welcomeMessage();
 void loginScreen();
 void adminMenu();
