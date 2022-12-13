@@ -102,13 +102,11 @@ int appendToDestinationsFile()
 
 void modifyDestinationDetails(char destinationName, int tripCost, int tripDuration)
 {
-	//int pos = 0;
-
 	if(head==NULL) {
 		printf("Linked List not initialized");
 		return;
 	} 
-	//tail = head;
+	tail = head;
 	while(tail->address!=NULL) {
 	
 		if(strcpy(tail->destinationName, destinationName) == 0) {
@@ -120,7 +118,6 @@ void modifyDestinationDetails(char destinationName, int tripCost, int tripDurati
 		}
 
 		tail = tail->address;
-		//pos++;
 	}
 
 	printf("%d does not exist in the list\n", destinationName);
