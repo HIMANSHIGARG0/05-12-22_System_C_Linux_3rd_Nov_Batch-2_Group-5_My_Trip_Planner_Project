@@ -76,28 +76,19 @@ int writeToHotelsFile()
 	return 1;    
 }
 
-
-
-/*void modifyHotelDetails(char hotelName, int fare, int rating)
+void modifyHotelDetails(char hotelName, int fare, int rating)
 {
-
-	printf("dest11 %d\n",destIdNo);
-	printf("tail11 %d",tail->destIdNo);
-	//int pos = 0;
-
 	if(head==NULL) {
 		printf("Linked List not initialized");
 		return;
 	} 
-	//tail = head;
 	while(tail->address!=NULL) {
 	
-		if(tail->destIdNo == destIdNo) {
-
-			tail->destIdNo = destIdNo;
-			strcpy(tail->destinationName, destinationName);
-			tail->tripCost = tripCost;
-			tail->tripDuration = tripDuration;
+		if(strcpy(tail->hotelName, hotelName) == 0) {
+			
+			strcpy(tail->hotelName, hotelName);
+			tail->fare = fare;
+			tail->rating = rating;
 			return;
 		}
 
@@ -105,46 +96,36 @@ int writeToHotelsFile()
 		//pos++;
 	}
 
-	printf("%d does not exist in the list\n", destIdNo);
+	printf("%d does not exist in the list\n", hotelName);
 }
 
-int insertModifiedDestData()
+int insertModifiedHotelData()
 {
-	printf("tail0 %d",tail->destIdNo);
-	int destIdNo; //primary key for destination data
-	int destinationCount;  //No. of Destinations Admin wants to update
-	char destinationName[MAX_SIZE_NAME];    //Name of Destination
-	int tripCost;    //Cost for whole Trip
-	int tripDuration;   //Duration of the Trip
+	int hotelCount;  //No. of hotels Admin wants to update
+	char hotelName[MAX_SIZE_NAME];    //Name of hotel
+	int fare;    //Cost for per day hotel room
+	int rating;   //hotel rating out of 5
 
 	printf("\n\t\t\tEnter the no of destinations you want data to be modified for: ");
-	scanf("%d", &destinationCount);
+	scanf("%d", &hotelCount);
 	
-	for(int i = 0; i < destinationCount; i++)
+	for(int i = 0; i < hotelCount; i++)
 	{
 
-		printf("\n\t\t\tEnter the details of Destination %d", i+1);
-		printf("\n\t\t\t\tID Number: ");      //Input for ID number as primary key for data
-		scanf("%d", &destIdNo);
-	        getchar();	
-
-		printf("\n\t\t\t\tName of Destination: ");
-		fgets(destinationName, MAX_SIZE_NAME, stdin);      //Input for name of destination from admin
+		printf("\n\t\t\tEnter the details of Hotels %d", i+1);
+		printf("\n\t\t\t\tName of hotel: ");
+		fgets(hotelName, MAX_SIZE_NAME, stdin);      //Input for name of hotel from admin
 	
-		printf("\n\t\t\t\tCost of Trip (Rs): ");      //Input for cost of trip from admin
-		scanf("%d", &tripCost);
+		printf("\n\t\t\t\tFare of Room peer day (Rs): ");      //Input for cost of room from admin
+		scanf("%d", &fare);
 
-		printf("\n\t\t\t\tTrip Duration(in days): ");     //Input for duration of trip from admin
-		scanf("%d", &tripDuration);
+		printf("\n\t\t\t\tRatings of hotel: ");     //Input for ratings from admin
+		scanf("%d", &rating);
 		getchar();
-
-	printf("dest1 %d\n",destIdNo);
-		modifyDestinationDetails(destIdNo, destinationName, tripCost, tripDuration);
-	printf("dest2 %d\n",destIdNo);
-	printf("tail2 %d",tail->destIdNo);
+		modifyDestinationDetails(hotelName, fare, rating);
 	}
 	return 1;
-}*/
+}
 
 int displayHotelsFileData()
 {
