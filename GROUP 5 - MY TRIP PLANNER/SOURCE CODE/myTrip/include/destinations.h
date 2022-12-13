@@ -7,6 +7,6 @@ int writeToDestinationsFile();
 int appendToDestinationsFile();
 int displayDestinationsFileData();
 int delete(char *data);
-//void modifyDestinationDetails(int DestIdNo, char destinationName, int tripCost, int tripDuration);
-//int insertModifiedDestData();
+void modifyDestinationDetails(char destinationName, int tripCost, int tripDuration);
+int insertModifiedDestData();
 #endif
