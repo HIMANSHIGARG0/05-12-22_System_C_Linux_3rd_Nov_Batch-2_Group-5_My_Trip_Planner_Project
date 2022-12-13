@@ -100,7 +100,7 @@ int appendToDestinationsFile()
 }
 
 
-/*void modifyDestinationDetails(int destIdNo, char destinationName, int tripCost, int tripDuration)
+void modifyDestinationDetails(int destIdNo, char destinationName, int tripCost, int tripDuration)
 {
 
 	printf("dest11 %d\n",destIdNo);
@@ -166,7 +166,7 @@ int insertModifiedDestData()
 	printf("tail2 %d",tail->destIdNo);
 	}
 	return 1;
-}*/
+}
 
 int displayDestinationsFileData()
 {
