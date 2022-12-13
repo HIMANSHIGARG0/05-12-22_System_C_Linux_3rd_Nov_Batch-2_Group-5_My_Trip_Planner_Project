@@ -109,7 +109,7 @@ void modifyDestinationDetails(char destinationName, int tripCost, int tripDurati
 	tail = head;
 	while(tail->address!=NULL) {
 	
-		if(strcpy(tail->destinationName, destinationName) == 0) {
+		if(strcmp(tail->destinationName, destinationName) == 0) {
 			
 			strcpy(tail->destinationName, destinationName);
 			tail->tripCost = tripCost;
