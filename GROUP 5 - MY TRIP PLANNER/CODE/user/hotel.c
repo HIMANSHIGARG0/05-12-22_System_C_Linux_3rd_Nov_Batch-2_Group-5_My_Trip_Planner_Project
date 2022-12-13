@@ -12,10 +12,10 @@ void delete1();
 void search();
 struct CustomerDetails   //STRUCTURE DECLARATION
 {
-	char roomnumber[10];
+	int roomnumber[10];
 	char name[20];
 	char address[25];
-	char phonenumber[15];
+	int phonenumber[15];
 	char nationality[15];
 	char email[20];
 	char period[10];
