@@ -100,11 +100,8 @@ int appendToDestinationsFile()
 }
 
 
-void modifyDestinationDetails(int destIdNo, char destinationName, int tripCost, int tripDuration)
+void modifyDestinationDetails(char destinationName, int tripCost, int tripDuration)
 {
-
-	printf("dest11 %d\n",destIdNo);
-	printf("tail11 %d",tail->destIdNo);
 	//int pos = 0;
 
 	if(head==NULL) {
@@ -114,9 +111,8 @@ void modifyDestinationDetails(int destIdNo, char destinationName, int tripCost, 
 	//tail = head;
 	while(tail->address!=NULL) {
 	
-		if(tail->destIdNo == destIdNo) {
-
-			tail->destIdNo = destIdNo;
+		if(strcpy(tail->destinationName, destinationName) == 0) {
+			
 			strcpy(tail->destinationName, destinationName);
 			tail->tripCost = tripCost;
 			tail->tripDuration = tripDuration;
@@ -127,13 +123,11 @@ void modifyDestinationDetails(int destIdNo, char destinationName, int tripCost, 
 		//pos++;
 	}
 
-	printf("%d does not exist in the list\n", destIdNo);
+	printf("%d does not exist in the list\n", destinationName);
 }
 
 int insertModifiedDestData()
 {
-	printf("tail0 %d",tail->destIdNo);
-	int destIdNo; //primary key for destination data
 	int destinationCount;  //No. of Destinations Admin wants to update
 	char destinationName[MAX_SIZE_NAME];    //Name of Destination
 	int tripCost;    //Cost for whole Trip
@@ -146,10 +140,6 @@ int insertModifiedDestData()
 	{
 
 		printf("\n\t\t\tEnter the details of Destination %d", i+1);
-		printf("\n\t\t\t\tID Number: ");      //Input for ID number as primary key for data
-		scanf("%d", &destIdNo);
-	        getchar();	
-
 		printf("\n\t\t\t\tName of Destination: ");
 		fgets(destinationName, MAX_SIZE_NAME, stdin);      //Input for name of destination from admin
 	
@@ -159,11 +149,7 @@ int insertModifiedDestData()
 		printf("\n\t\t\t\tTrip Duration(in days): ");     //Input for duration of trip from admin
 		scanf("%d", &tripDuration);
 		getchar();
-
-	printf("dest1 %d\n",destIdNo);
-		modifyDestinationDetails(destIdNo, destinationName, tripCost, tripDuration);
-	printf("dest2 %d\n",destIdNo);
-	printf("tail2 %d",tail->destIdNo);
+		modifyDestinationDetails(destinationName, tripCost, tripDuration);
 	}
 	return 1;
 }
